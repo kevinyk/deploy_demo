@@ -1,0 +1,14 @@
+<h4>Making a new product:</h4>
+<form action='/products' method='POST'>
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+	<select name='category_id'>
+	<% @categories.each do |c| %>
+		<option value="<%=c.id %>"><%= c.name %></option>
+	<% end %>
+	</select>
+
+	<input type="text" name="name" placeholder="name">
+	<input type="text" name="description" placeholder="description">
+	<input type="text" name="pricing" placeholder="pricing">
+	<input type="submit" name="">
+</form>

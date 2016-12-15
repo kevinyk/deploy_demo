@@ -1,0 +1,25 @@
+<h4>Listing Products:</h4>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Pricing</th>
+		<th>Category</th>
+		<th>Actions</th>
+	</tr>
+	<% @products.each do |p| %>
+		<tr>
+			<td><%= p.name %></td>
+			<td><%= p.description %></td>
+			<td><%= p.pricing %></td>
+			<td><%= p.cat_name %></td>
+			<td>
+				<a href="/products/<%= p.id %>">Show</a>
+				| <a href="">Edit</a>
+				| <a href="">Destroy</a>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<a href="/products/new">Create a new product</a>
